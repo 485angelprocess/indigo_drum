@@ -10,24 +10,28 @@
 
 #define THRESHOLD 400 // Value that drum triggers at
 #define EXCLUDED 100 // Time ms to ignore the signal (debounce)
+
+#define DRUM_CHANNEL 2 // MIDI channel
+#define NOTE_VELOCITY 90 // Default velocity
+
 #define MAXDRUMS 5 // Number of drums
 
+// Debugging modes
 //#define MONITOR
 //#define AUTO
-//#define NORMALMODE
-
 int excluded[MAXDRUMS];
 unsigned long timeon[MAXDRUMS];
+
+// MIDI notes for each 
 uint8_t drums[MAXDRUMS] = {
-  60, // C3
+  60, // C3 - A0
   61,
   62,
   63,
   64
 };
 
-#define DRUM_CHANNEL 2
-#define NOTE_VELOCITY 90
+
 
 int sensorPin;
 
